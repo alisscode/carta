@@ -1,0 +1,195 @@
+/* Reset CSS */
+* {
+    min-width: 0;
+    font: inherit;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  img,
+  video,
+  svg {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background-color: #f0e6f6; /* Color de fondo */
+    font-family: 'Lora', serif; /* Cambia la fuente a Lora */
+    position: relative;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container-letter {
+    position: relative;
+    text-align: center; /* Alinea el contenido al centro */
+    animation: movimientoVertical 3s infinite ease-in-out; /* Agrega animación de movimiento vertical */
+  }
+  
+  @keyframes movimientoVertical {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px); /* Ajusta la distancia del movimiento */
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .cover {
+    position: absolute;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-top: 100px solid #fe3334;
+    border-bottom: 100px solid transparent;
+    transition: transform .75s;
+    transform-origin: top;
+  }
+  
+  .paper {
+    position: absolute;
+    padding: 1.5rem;
+    line-height: 2rem;
+    right: 5px;
+    z-index: -1;
+    background: white;
+    width: 390px;
+    height: 180px;
+    transition: all .75s;
+    overflow: hidden;
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    text-align: center; 
+  }
+  
+  .letter {
+    border-left: 200px solid #ff989e;
+    border-right: 200px solid #ff989e;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid #ff858a;
+  }
+  
+  .options {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .options button {
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    background: #ff69b4; /* Color de los botones */
+    padding: 0.7rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Puedes ajustar la sombra aquí si es necesario */
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+  
+  .options button:hover {
+    background: #ff1493;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .open-cover {
+    transform: rotatex(180deg);
+  }
+  
+  .open-paper {
+    animation: openPaper .5s forwards;
+  }
+  
+  @keyframes openPaper {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -120px;
+    }
+  }
+  
+  .close-paper {
+    animation: closePaper .5s forwards;
+  }
+  
+  @keyframes closePaper {
+    0% {
+      top: -120px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  
+  .heart {
+    position: absolute;
+    font-size: 4rem; /* Tamaño del corazón */
+    color: #ff69b4; /* Color del corazón igual al color de los botones */
+    animation: salirCarta 2s forwards; /* Aumenta la duración de la animación */
+    display: none; /* Oculta los corazones por defecto */
+  }
+  
+  .heart:nth-of-type(1) {
+    top: 15%;
+    left: 15%;
+  }
+  
+  .heart:nth-of-type(2) {
+    top: 25%;
+    left: 70%;
+  }
+  
+  .heart:nth-of-type(3) {
+    top: 60%;
+    left: 30%;
+  }
+  
+  .heart:nth-of-type(4) {
+    top: 70%;
+    left: 75%;
+  }
+  
+  .heart:nth-of-type(5) {
+    top: 30%;
+    left: 45%;
+  }
+  
+  .flower {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem; /* Tamaño de la flor */
+    color: #ff69b4; /* Color de la flor igual al color de los botones */
+  }
+  
+  @keyframes salirCarta {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-50vh); /* Ajusta la distancia a la que se moverán */
+      opacity: 0;
+    }
+  }
+  
